@@ -1,9 +1,9 @@
 {
-  "name": "docs",
+  "name": "admin",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3001",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,7 +16,6 @@
   },
   "devDependencies": {
     "eslint": "7.32.0",
-    "eslint-config-custom": "*",
     "next-transpile-modules": "9.0.0",
     "tsconfig": "*",
     "@types/node": "^17.0.12",

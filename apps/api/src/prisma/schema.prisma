@@ -1,0 +1,40 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator nexusPrisma {
+  provider = "nexus-prisma"
+}
+
+enum Role {
+  AUTHOR
+  ADMIN
+}
+
+model User {
+  id       String    @id @default(cuid())
+  avatar   String?
+  name     String
+  email    String
+  role     Role      @default(AUTHOR)
+  articles Article[]
+}
+
+model Article {
+  id          String   @id @default(cuid())
+  title       String
+  preview     String
+  lead        String
+  author      User     @relation(fields: [authorId], references: [id])
+  authorId    String
+  content     String
+  isPublished Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+  tags        String[]
+}
