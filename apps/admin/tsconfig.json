@@ -1,5 +1,17 @@
 {
   "extends": "tsconfig/nextjs.json",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/assets/*": ["src/assets/*"],
+      "@/helpers/*": ["helpers/*"],
+      "@/hooks/*": ["src/hooks/*"],
+      "@/pages/*": ["src/pages/*"],
+      "@/graphql/*": ["src/graphql/*"],
+      "@/store/*": ["store/*"],
+      "@/types/*": ["src/types/*"]
+    }
+  }
 }
