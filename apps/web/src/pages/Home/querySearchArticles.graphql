@@ -1,0 +1,8 @@
+query SearchArticles {
+  articles: getPublishedArticles {
+    results {
+      id
+      title
+    }
+  }
+}

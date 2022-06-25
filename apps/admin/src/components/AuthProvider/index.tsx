@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
-const PUBLIC_ROUTES = ['/login'];
+const PUBLIC_ROUTES = ['/'];
 
 interface AuthProvider {
   children: React.ReactNode;

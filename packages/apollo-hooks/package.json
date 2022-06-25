@@ -1,0 +1,40 @@
+{
+  "name": "apollo-hooks",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "private": true,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "tsup index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup index.tsx --format esm,cjs --watch --dts --external react",
+    "lint": "TIMING=1 eslint --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "generate": "graphql-codegen --config ./codegen.yml"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^2.3.1",
+    "@graphql-codegen/typescript-operations": "^2.2.2",
+    "@graphql-codegen/typescript-react-apollo": "^3.2.4",
+    "@types/jest": "^27.4.0",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.8",
+    "eslint": "^8.10.0",
+    "jest": "^26.6.3",
+    "react": "^17.0.2",
+    "scripts": "*",
+    "tsconfig": "*",
+    "tsup": "^5.12.1",
+    "typescript": "^4.5.3"
+  },
+  "jest": {
+    "preset": "scripts/jest/node"
+  },
+  "dependencies": {}
+}

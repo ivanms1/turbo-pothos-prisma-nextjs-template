@@ -1,10 +1,3 @@
-import { Button } from 'ui';
+import Home from '@/pages/Home';
 
-export default function Web() {
-  return (
-    <div>
-      <h1>Admin</h1>
-      <Button />
-    </div>
-  );
-}
+export default Home;
