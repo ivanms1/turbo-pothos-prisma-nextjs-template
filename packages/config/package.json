@@ -9,7 +9,7 @@
   ],
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.21.0",
-    "eslint-config-next": "^12.0.10",
+    "eslint-config-next": "^12.2.2",
     "eslint-config-prettier": "^8.3.0",
     "prettier": "2.7.1"
   },
