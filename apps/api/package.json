@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "test": "jest --detectOpenHandles",
-    "dev:backend": "nodemon --exec \"node -r esbuild-register ./src/main.ts\" -e .ts",
-    "dev": "ts-node-dev --transpile-only --no-notify ./src/main.ts",
+    "dev": "nodemon --exec \"node -r esbuild-register ./src/main.ts\" -e .ts",
+    "dev:old": "ts-node-dev --transpile-only --no-notify ./src/main.ts",
     "start": "node ./dist/main.js",
     "build": "tsc",
     "lint": "tsc --noEmit && TIMING=1 eslint src --fix",
