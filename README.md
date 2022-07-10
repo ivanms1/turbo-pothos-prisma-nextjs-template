@@ -44,7 +44,7 @@
     Inside the `apps/api` directory
 
     ```
-    DATABASE_URL="database url, if running with docker it would be: postgresql://postgres:postgres@localhost:5432/project-shelf"
+    DATABASE_URL="database url, if running with docker it would be: postgresql://postgres:postgres@localhost:5432/your-db"
     CLOUDINARY_URL="Your Cloudinary key goes here"
     JWT_SECRET="Any random string, only for development"
     SERVER_URL="http://localhost"
