@@ -30,7 +30,7 @@
     Once you have Docker installed run this command:
 
     ```
-    docker run --detach --publish 5432:5432 -e POSTGRES_PASSWORD=postgres --name project-shelf postgres:10.12
+    docker run --detach --publish 5432:5432 -e POSTGRES_PASSWORD=postgres --name your-db postgres:10.12
     ```
 
     Another alternative is running a PostgreSQL DB in the cloud with services like [fly.io](https://fly.io/) or [Heroku](https://dashboard.heroku.com) wich have a a free tier.
