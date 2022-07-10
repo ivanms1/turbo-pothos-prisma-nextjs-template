@@ -11,6 +11,8 @@
     "dev": "turbo run dev --parallel",
     "dev:web": "turbo run dev --filter=!admin --parallel",
     "dev:admin": "turbo run dev --filter=!web --parallel",
+    "build:hooks": "turbo run build --filter=apollo-hooks",
+    "build:ui": "turbo run build --filter=ui",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
