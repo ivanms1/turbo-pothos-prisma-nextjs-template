@@ -21,7 +21,7 @@ const app = express();
 const allowedOrigins =
   process.env.NODE_ENV === 'development'
     ? ['http://localhost:3000', 'https://studio.apollographql.com']
-    : ['https://yangpa-dev.netlify.app'];
+    : ['production client url'];
 
 apollo.start().then(() =>
   apollo.applyMiddleware({
