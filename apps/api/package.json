@@ -33,7 +33,7 @@
     "preset": "scripts/jest/node"
   },
   "dependencies": {
-    "@prisma/client": "^3.11.1",
+    "@prisma/client": "^3.15.2",
     "apollo-server-express": "^3.10.0",
     "body-parser": "^1.19.2",
     "cloudinary": "^1.28.1",
