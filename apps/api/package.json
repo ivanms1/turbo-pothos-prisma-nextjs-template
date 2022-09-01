@@ -45,7 +45,7 @@
     "logger": "*",
     "nexus": "^1.1.0",
     "nexus-prisma": "^0.35.0",
-    "prisma": "^3.11.1"
+    "prisma": "^4.3.0"
   },
   "prisma": {
     "schema": "src/prisma/schema.prisma"
