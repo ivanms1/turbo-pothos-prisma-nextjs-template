@@ -22,9 +22,9 @@
     "baseUrl": ".",
     "paths": {
       "@/helpers/*": ["src/helpers/*"],
-      "@/graphql/*": ["src/graphql/*"]
+      "@/src/*": ["src/*"]
     }
   },
   "exclude": ["node_modules"],
-  "include": ["src"]
+  "include": ["src", "build-schema.js"]
 }

@@ -1,7 +1,11 @@
 import jwt from 'jsonwebtoken';
 
 const decodeAccessToken = (token: string) => {
-  return jwt.verify(token, process.env.JWT_SECRET!);
+  if (process.env.JWT_SECRET) {
+    return jwt.verify(token, process.env.JWT_SECRET);
+  }
+
+  return '';
 };
 
 export default decodeAccessToken;

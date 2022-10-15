@@ -1,5 +1,5 @@
-query SearchArticles {
-  articles: getPublishedArticles {
+query SearchArticles($input: ArticlesInput) {
+  articles: searchArticles(input: $input) {
     results {
       id
       title

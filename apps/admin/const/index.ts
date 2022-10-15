@@ -1,1 +1,1 @@
-export const TOKEN_NAME = 'admin-turbo-nexus-prisma-nextjs';
+export const TOKEN_NAME = 'admin-turbo-pothos-prisma-nextjs';

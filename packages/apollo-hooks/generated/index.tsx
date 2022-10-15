@@ -14,25 +14,34 @@ export type Scalars = {
   Int: number;
   Float: number;
   /** A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
-  DateTime: any;
+  Date: any;
   /** The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
-  JSONObject: any;
+  JSON: any;
 };
 
 export type Article = {
   __typename?: 'Article';
   author: User;
   content: Scalars['String'];
-  createdAt: Scalars['DateTime'];
+  createdAt: Scalars['Date'];
   id: Scalars['ID'];
   isPublished: Scalars['Boolean'];
   lead: Scalars['String'];
   preview: Scalars['String'];
   tags: Array<Scalars['String']>;
   title: Scalars['String'];
-  updatedAt: Scalars['DateTime'];
+  updatedAt: Scalars['Date'];
 };
 
+/** Articles query input */
+export type ArticlesInput = {
+  cursor?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<SearchOrder>;
+  orderBy?: InputMaybe<Scalars['String']>;
+  search?: InputMaybe<Scalars['String']>;
+};
+
+/** Paginated list of articles */
 export type ArticlesResponse = {
   __typename?: 'ArticlesResponse';
   nextCursor?: Maybe<Scalars['String']>;
@@ -43,137 +52,79 @@ export type ArticlesResponse = {
 
 export type CreateArticleInput = {
   content: Scalars['String'];
-  description: Scalars['String'];
   lead: Scalars['String'];
   preview: Scalars['String'];
-  tags?: InputMaybe<Array<Scalars['String']>>;
+  tags: Array<Scalars['String']>;
   title: Scalars['String'];
 };
 
 export type Mutation = {
   __typename?: 'Mutation';
-  createArticle?: Maybe<Article>;
-  deleteArticle?: Maybe<Scalars['String']>;
-  deleteManyArticles?: Maybe<Scalars['JSONObject']>;
-  signup: Scalars['JSONObject'];
-  /** Change an article status */
-  updateArticleStatus?: Maybe<Article>;
-  updateProject?: Maybe<Article>;
-  updateUser: User;
-  uploadImage?: Maybe<Scalars['JSONObject']>;
+  createArticle: Article;
+  deleteArticle: Article;
+  signUp: User;
+  updateArticle: Article;
 };
 
 
 export type MutationCreateArticleArgs = {
-  input?: InputMaybe<CreateArticleInput>;
+  input: CreateArticleInput;
+  userId: Scalars['String'];
 };
 
 
 export type MutationDeleteArticleArgs = {
-  id: Scalars['ID'];
+  articleId: Scalars['String'];
 };
 
 
-export type MutationDeleteManyArticlesArgs = {
-  ids: Array<Scalars['ID']>;
-};
-
-
-export type MutationSignupArgs = {
+export type MutationSignUpArgs = {
   avatar: Scalars['String'];
   email: Scalars['String'];
   name: Scalars['String'];
 };
 
 
-export type MutationUpdateArticleStatusArgs = {
-  isPublished: Scalars['Boolean'];
-  projectId: Scalars['String'];
-};
-
-
-export type MutationUpdateProjectArgs = {
-  input?: InputMaybe<UpdateArticleInput>;
-  projectId: Scalars['ID'];
-};
-
-
-export type MutationUpdateUserArgs = {
-  input?: InputMaybe<UpdateUsertInput>;
-  userId: Scalars['String'];
-};
-
-
-export type MutationUploadImageArgs = {
-  path: Scalars['String'];
+export type MutationUpdateArticleArgs = {
+  articleId: Scalars['String'];
+  input: CreateArticleInput;
 };
 
 export type Query = {
   __typename?: 'Query';
-  getArticle?: Maybe<Article>;
-  /** Admin query to get articles */
-  getArticlesAdmin: ArticlesResponse;
-  getCurrentUser?: Maybe<User>;
-  /** Get all my projects */
-  getMyProjects: ArticlesResponse;
-  /** Get all published articles */
-  getPublishedArticles: ArticlesResponse;
-  getUser?: Maybe<User>;
-  /** Get all the articles from a certain user */
+  getArticle: Article;
+  getUser: User;
   getUserArticles: ArticlesResponse;
-  getUsers: Array<Maybe<User>>;
-  /** Search articles */
+  getUsers: Array<User>;
   searchArticles: ArticlesResponse;
 };
 
 
 export type QueryGetArticleArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryGetArticlesAdminArgs = {
-  cursor?: InputMaybe<Scalars['String']>;
-};
-
-
-export type QueryGetMyProjectsArgs = {
-  cursor?: InputMaybe<Scalars['String']>;
-};
-
-
-export type QueryGetPublishedArticlesArgs = {
-  cursor?: InputMaybe<Scalars['String']>;
+  articleId: Scalars['String'];
 };
 
 
 export type QueryGetUserArgs = {
-  id: Scalars['ID'];
+  userId: Scalars['String'];
 };
 
 
 export type QueryGetUserArticlesArgs = {
-  cursor?: InputMaybe<Scalars['String']>;
-  userId?: InputMaybe<Scalars['String']>;
+  input: ArticlesInput;
+  userId: Scalars['String'];
 };
 
 
 export type QuerySearchArticlesArgs = {
-  cursor?: InputMaybe<Scalars['String']>;
-  input?: InputMaybe<SearchArticlesInput>;
+  input?: InputMaybe<ArticlesInput>;
 };
 
+/** User role */
 export enum Role {
   Admin = 'ADMIN',
   Author = 'AUTHOR'
 }
-
-/** Search input fields */
-export type SearchArticlesInput = {
-  order: SearchOrder;
-  orderBy: Scalars['String'];
-  search: Scalars['String'];
-};
 
 /** Search order */
 export enum SearchOrder {
@@ -181,27 +132,8 @@ export enum SearchOrder {
   Desc = 'desc'
 }
 
-export type UpdateArticleInput = {
-  content: Scalars['String'];
-  description: Scalars['String'];
-  lead: Scalars['String'];
-  preview: Scalars['String'];
-  tags?: InputMaybe<Array<Scalars['String']>>;
-  title: Scalars['String'];
-};
-
-/** Update the user information */
-export type UpdateUsertInput = {
-  discord: Scalars['String'];
-  email: Scalars['String'];
-  github: Scalars['String'];
-  name: Scalars['String'];
-  role: Role;
-};
-
 export type User = {
   __typename?: 'User';
-  articles?: Maybe<Array<Article>>;
   avatar?: Maybe<Scalars['String']>;
   email: Scalars['String'];
   id: Scalars['ID'];
@@ -209,15 +141,17 @@ export type User = {
   role: Role;
 };
 
-export type SearchArticlesQueryVariables = Exact<{ [key: string]: never; }>;
+export type SearchArticlesQueryVariables = Exact<{
+  input?: InputMaybe<ArticlesInput>;
+}>;
 
 
 export type SearchArticlesQuery = { __typename?: 'Query', articles: { __typename?: 'ArticlesResponse', results: Array<{ __typename?: 'Article', id: string, title: string }> } };
 
 
 export const SearchArticlesDocument = gql`
-    query SearchArticles {
-  articles: getPublishedArticles {
+    query SearchArticles($input: ArticlesInput) {
+  articles: searchArticles(input: $input) {
     results {
       id
       title
@@ -238,6 +172,7 @@ export const SearchArticlesDocument = gql`
  * @example
  * const { data, loading, error } = useSearchArticlesQuery({
  *   variables: {
+ *      input: // value for 'input'
  *   },
  * });
  */

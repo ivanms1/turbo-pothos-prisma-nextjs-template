@@ -1,22 +1,13 @@
-import { makeSchema } from 'nexus';
-import { join } from 'path';
+import { writeFileSync } from 'fs';
+import { lexicographicSortSchema, printSchema } from 'graphql';
+import path from 'path';
 
-import * as types from './graphql';
+import builder from './builder';
 
-export const schema = makeSchema({
-  types,
-  outputs: {
-    typegen: join(
-      process.cwd(),
-      'node_modules',
-      '@types',
-      'nexus-typegen',
-      'index.d.ts'
-    ),
-    schema: join(__dirname, '..', 'schema.graphql'),
-  },
-  contextType: {
-    module: join(__dirname, './context'),
-    export: 'Context',
-  },
-});
+import './schema/index';
+
+export const schema = builder.toSchema();
+
+const schemaAsString = printSchema(lexicographicSortSchema(schema));
+
+writeFileSync(path.join(__dirname, '../schema.graphql'), schemaAsString);
