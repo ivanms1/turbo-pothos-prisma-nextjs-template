@@ -41,7 +41,7 @@
   "dependencies": {
     "@pothos/core": "^3.22.5",
     "@pothos/plugin-prisma": "^3.35.4",
-    "@prisma/client": "^3.11.1",
+    "@prisma/client": "^4.5.0",
     "apollo-server-express": "^3.10.0",
     "body-parser": "^1.19.2",
     "cloudinary": "^1.28.1",
@@ -51,7 +51,7 @@
     "graphql-scalars": "^1.17.0",
     "jsonwebtoken": "^8.5.1",
     "logger": "*",
-    "prisma": "^3.11.1"
+    "prisma": "^4.5.0"
   },
   "prisma": {
     "schema": "src/prisma/schema.prisma"

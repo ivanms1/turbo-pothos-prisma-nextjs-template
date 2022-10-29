@@ -1,6 +1,5 @@
 import { ApolloServer } from 'apollo-server-express';
 import express from 'express';
-import db from './db';
 
 import { schema } from './schema';
 
@@ -10,7 +9,6 @@ const apollo = new ApolloServer({
   schema,
   context: async ({ req }) => {
     return {
-      prisma: db,
       accessToken: req?.headers?.authorization,
     };
   },
