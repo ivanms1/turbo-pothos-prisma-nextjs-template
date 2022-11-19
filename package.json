@@ -13,6 +13,10 @@
     "dev:admin": "turbo run dev --filter=!web --parallel",
     "build:hooks": "turbo run build --filter=apollo-hooks",
     "build:ui": "turbo run build --filter=ui",
+    "generate:hooks": "turbo run generate --filter=apollo-hooks",
+    "generate:prisma": "turbo run generate --filter=api",
+    "migrate": "turbo run migrate:dev --filter=api",
+    "update:hooks": "yarn generate:hooks && yarn build:hooks",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },

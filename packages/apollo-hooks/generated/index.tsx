@@ -64,6 +64,7 @@ export type Mutation = {
   deleteArticle: Article;
   signUp: User;
   updateArticle: Article;
+  uploadImage: Scalars['String'];
 };
 
 
@@ -88,6 +89,11 @@ export type MutationSignUpArgs = {
 export type MutationUpdateArticleArgs = {
   articleId: Scalars['String'];
   input: CreateArticleInput;
+};
+
+
+export type MutationUploadImageArgs = {
+  path: Scalars['String'];
 };
 
 export type Query = {

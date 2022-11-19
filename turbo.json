@@ -9,6 +9,12 @@
     },
     "dev": {
       "cache": false
+    },
+    "generate": {
+      "cache": false
+    },
+    "migrate:dev": {
+      "cache": false
     }
   }
 }

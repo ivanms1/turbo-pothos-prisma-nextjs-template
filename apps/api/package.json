@@ -11,7 +11,7 @@
     "lint": "tsc --noEmit && TIMING=1 eslint src --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "generate": "yarn prisma generate",
-    "migrate": "yarn prisma migrate"
+    "migrate": "yarn prisma migrate dev"
   },
   "devDependencies": {
     "@boost/module": "^4.0.0",
