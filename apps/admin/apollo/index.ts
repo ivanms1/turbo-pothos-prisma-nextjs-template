@@ -8,24 +8,9 @@ import {
   NormalizedCacheObject,
 } from '@apollo/client';
 
-import getAuthToken from '@/helpers/getAuthToken';
-
-import { setContext } from '@apollo/client/link/context';
-
 export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__';
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null;
-
-const authLink = setContext(async (_, { headers }) => {
-  const token = await getAuthToken();
-
-  return {
-    headers: {
-      ...headers,
-      Authorization: token ?? headers?.Authorization,
-    },
-  };
-});
 
 const projectsMergeConfig: FieldPolicy<any, any, any> = {
   keyArgs: false,
@@ -54,11 +39,9 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     connectToDevTools: true,
-    link: authLink.concat(
-      createHttpLink({
-        uri: process.env.NEXT_PUBLIC_SERVER_URL,
-      })
-    ),
+    link: createHttpLink({
+      uri: process.env.NEXT_PUBLIC_SERVER_URL,
+    }),
     cache: new InMemoryCache({
       typePolicies: {
         Query: {

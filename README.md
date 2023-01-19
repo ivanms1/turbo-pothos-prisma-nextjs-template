@@ -30,7 +30,7 @@
     Once you have Docker installed run this command:
 
     ```
-    docker run --detach --publish 5432:5432 -e POSTGRES_PASSWORD=postgres --name your-db postgres:10.12
+    docker run --detach --publish 5432:5432 -e POSTGRES_PASSWORD=postgres --name turbo-pothos-template-prisma-next-js postgres:10.12
     ```
 
     Another alternative is running a PostgreSQL DB in the cloud with services like [fly.io](https://fly.io/) or [Heroku](https://dashboard.heroku.com) wich have a a free tier.
@@ -52,69 +52,61 @@
 
 - ### Frontend
 
-  - **Github OAuth**
-    Github is being used as an auth provider, you will need to [create an OAuth](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app) app on your github account with these settings:
-
-    ![](https://res.cloudinary.com/ivanms1/image/upload/v1644078662/Screen_Shot_2022-02-06_at_1.28.01_AM_aa0u5l.png)
-
   - **Enviroment Variables**
 
     Inside the `apps/web` and `apps/admin` directories
 
     ```
-    GITHUB_CLIENT_ID="your oatuh github client id"
-    GITHUB_CLIENT_SECRET="your oatuh github client secret"
-    JWT_SECRET="some random string, only for development"
-    NEXTAUTH_URL="http://localhost:3000"
     NEXT_PUBLIC_SERVER_URL="http://localhost:8080/graphql"
-    NEXT_PUBLIC_CLOUD_NAME="cloudinary id"
     ```
 
 ## Running the app
 
-- ### General
+- To install project deps, run
 
-  - Build the hooks library
+  ```
+  yarn app:install
+  ```
+
+- Initialize the database or sync the database schema
+
+  ```
+  yarn db:push
+  ```
+
+- Generate the pr the prismas client and types
+
+  ```
+  yarn db:generate
+  ```
+
+- Generate the apollo hooks
+
+  ```
+  yarn apollo:generate
+  ```
+
+- Run app
+
+  - Start the backend
+
     ```
-    yarn build:hooks
-    ```
-  - Install all dependencies, on the root folder run
-
-    ```
-    yarn install
+    yarn dev:api
     ```
 
-- ### Backend
-
-  #### Only when running the app for the first time
-
-  - Make sure you cd into the project-shelf/apps/api directory
-  - Generate data source client code with prisma
-
-  ```
-  npx prisma generate
-  ```
-
-  - Initialize Database
-
-  ```
-  npx prisma migrate dev
-  ```
-
-  #### After
-
-  - Run app
-
-  ```
-  yarn dev:api
-  ```
-
-- ### Frontend
-
-  - Start the app
+  - Start backend + web
 
     ```
     yarn dev:web
     ```
 
-  - (optional) inside the apps/web, use the `yarn generate` cli command to generate templates for pages and components.
+  - Start backend + admin
+
+    ```
+    yarn dev:admin
+    ```
+
+  - Start backed + admin + web
+    ```
+    yarn dev
+    ```

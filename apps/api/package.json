@@ -10,11 +10,12 @@
     "build": "tsc",
     "lint": "tsc --noEmit && TIMING=1 eslint src --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "generate": "yarn prisma generate",
-    "migrate": "yarn prisma migrate dev"
+    "db:generate": "yarn prisma generate",
+    "db:push": "yarn prisma db push --skip-generate"
   },
   "devDependencies": {
     "@boost/module": "^4.0.0",
+    "@faker-js/faker": "^7.6.0",
     "@graphql-codegen/cli": "^2.15.0",
     "@graphql-codegen/schema-ast": "^2.5.1",
     "@graphql-codegen/typescript": "^2.7.4",
@@ -54,6 +55,7 @@
     "prisma": "^4.5.0"
   },
   "prisma": {
-    "schema": "src/prisma/schema.prisma"
+    "schema": "src/prisma/schema.prisma",
+    "seed": "ts-node src/prisma/seed.ts"
   }
 }

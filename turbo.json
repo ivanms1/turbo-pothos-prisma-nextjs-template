@@ -13,7 +13,10 @@
     "generate": {
       "cache": false
     },
-    "migrate:dev": {
+    "db:generate": {
+      "cache": false
+    },
+    "db:push": {
       "cache": false
     }
   }
