@@ -21,19 +21,6 @@
 
   This repository uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager.
 
-- ### Backend
-
-  - **Enviroment Variables**
-
-    Inside the `apps/api` directory
-
-    ```
-    JWT_SECRET="Any random string, only for development"
-    SERVER_URL="http://localhost"
-    ```
-
-- ### Frontend
-
   - **Enviroment Variables**
 
     Inside the `apps/web` and `apps/admin` directories

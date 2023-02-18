@@ -41,10 +41,10 @@
     "preset": "scripts/jest/node"
   },
   "dependencies": {
+    "@apollo/server": "^4.4.0",
     "@pothos/core": "^3.22.5",
     "@pothos/plugin-prisma": "^3.35.4",
     "@prisma/client": "^4.5.0",
-    "apollo-server-express": "^3.10.0",
     "body-parser": "^1.19.2",
     "cloudinary": "^1.32.0",
     "cors": "^2.8.5",
