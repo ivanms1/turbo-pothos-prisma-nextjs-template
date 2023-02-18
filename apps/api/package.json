@@ -10,8 +10,9 @@
     "build": "tsc",
     "lint": "tsc --noEmit && TIMING=1 eslint src --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "db:seed": "yarn prisma db seed",
     "db:generate": "yarn prisma generate",
-    "db:push": "yarn prisma db push --skip-generate"
+    "db:push": "yarn prisma db push"
   },
   "devDependencies": {
     "@boost/module": "^4.0.0",

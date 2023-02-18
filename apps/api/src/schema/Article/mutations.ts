@@ -7,7 +7,6 @@ const CreateArticleInput = builder.inputType('CreateArticleInput', {
     lead: t.string({ required: true }),
     preview: t.string({ required: true }),
     content: t.string({ required: true }),
-    tags: t.stringList({ required: true }),
   }),
 });
 

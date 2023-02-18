@@ -6,7 +6,6 @@ type Article {
   isPublished: Boolean!
   lead: String!
   preview: String!
-  tags: [String!]!
   title: String!
   updatedAt: Date!
 }
@@ -31,7 +30,6 @@ input CreateArticleInput {
   content: String!
   lead: String!
   preview: String!
-  tags: [String!]!
   title: String!
 }
 
@@ -50,7 +48,6 @@ type Mutation {
   deleteArticle(articleId: String!): Article!
   signUp(avatar: String!, email: String!, name: String!): User!
   updateArticle(articleId: String!, input: CreateArticleInput!): Article!
-  uploadImage(path: String!): String!
 }
 
 type Query {

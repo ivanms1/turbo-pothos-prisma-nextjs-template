@@ -9,7 +9,6 @@ async function main() {
       avatar: faker.image.avatar(),
       name: faker.name.fullName(),
       email: faker.internet.email(),
-      role: 'ADMIN',
     },
   });
 
@@ -22,14 +21,19 @@ async function main() {
     preview: faker.image.image(),
     content: faker.lorem.paragraphs(),
     isPublished: true,
-    tags: faker.helpers.uniqueArray(faker.word.noun, 5),
   }));
 
-  const articles = await prisma.article.createMany({
-    data: articlesToCreate,
-  });
+  const articlesCreated = await Promise.all(
+    articlesToCreate.map(async (article) => {
+      const res = await prisma.article.create({
+        data: article,
+      });
+      console.log(`Created article with id: ${res.id}`);
+      return res;
+    })
+  );
 
-  console.log(`Created ${articles.count} articles`);
+  console.log(`Created ${articlesCreated.length} articles`);
 }
 
 main()

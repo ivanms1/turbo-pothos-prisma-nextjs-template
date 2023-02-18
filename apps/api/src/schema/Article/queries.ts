@@ -14,7 +14,6 @@ const Article = builder.prismaObject('Article', {
     isPublished: t.exposeBoolean('isPublished'),
     createdAt: t.expose('createdAt', { type: 'Date' }),
     updatedAt: t.expose('updatedAt', { type: 'Date' }),
-    tags: t.exposeStringList('tags'),
     author: t.relation('author'),
   }),
 });
@@ -78,13 +77,15 @@ builder.queryType({
             {
               title: {
                 contains: args?.input?.search || '',
-                mode: 'insensitive',
+                // enable this when using Postgres
+                // mode: 'insensitive',
               },
             },
             {
               lead: {
                 contains: args?.input?.search || '',
-                mode: 'insensitive',
+                // enable this when using Postgres
+                // mode: 'insensitive',
               },
             },
           ],
@@ -149,13 +150,15 @@ builder.queryType({
             {
               title: {
                 contains: args?.input?.search || undefined,
-                mode: 'insensitive',
+                // enable this when using Postgres
+                // mode: 'insensitive',
               },
             },
             {
               lead: {
                 contains: args?.input?.search || undefined,
-                mode: 'insensitive',
+                // enable this when using Postgres
+                // mode: 'insensitive',
               },
             },
           ],

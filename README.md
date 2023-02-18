@@ -23,29 +23,11 @@
 
 - ### Backend
 
-  - **PostgreSQL Database**
-
-    To run the backend, a connection to a database is needed. The easiest way to run a Postgres DB locally is via [Docker](https://www.docker.com/).
-
-    Once you have Docker installed run this command:
-
-    ```
-    docker run --detach --publish 5432:5432 -e POSTGRES_PASSWORD=postgres --name turbo-pothos-template-prisma-next-js postgres:10.12
-    ```
-
-    Another alternative is running a PostgreSQL DB in the cloud with services like [fly.io](https://fly.io/) or [Render](https://render.com/) wich have a a free tier.
-
-  - **Cloudinary**
-
-    All the images are saved in [Cloudinary](https://cloudinary.com/), the free tier is more than enough for development.
-
   - **Enviroment Variables**
 
     Inside the `apps/api` directory
 
     ```
-    DATABASE_URL="database url, if running with docker it would be: postgresql://postgres:postgres@localhost:5432/your-db"
-    CLOUDINARY_URL="Your Cloudinary key goes here"
     JWT_SECRET="Any random string, only for development"
     SERVER_URL="http://localhost"
     ```
@@ -65,7 +47,7 @@
 - To install project deps, run
 
   ```
-  yarn app:install
+  yarn install
   ```
 
 - Initialize the database or sync the database schema
@@ -80,33 +62,43 @@
   yarn db:generate
   ```
 
-- Generate the apollo hooks
+- Seed the database
 
   ```
-  yarn apollo:generate
+  yarn db:seed
   ```
 
 - Run app
 
-  - Start the backend
+  - Start the server
 
     ```
     yarn dev:api
     ```
 
-  - Start backend + web
+  - Start server + web
 
     ```
     yarn dev:web
     ```
 
-  - Start backend + admin
+  - Start server + admin
 
     ```
     yarn dev:admin
     ```
 
-  - Start backed + admin + web
+  - Start server + admin + web
     ```
     yarn dev
     ```
+
+## Generating GraphQL Hooks
+
+- To generate the graphql hooks, run
+
+  ```
+  yarn generate:hooks
+  ```
+
+  This command will detect all the graphql files inside the `apps/web` and `apps/admin` directories and generate the hooks for them.
