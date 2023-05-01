@@ -1989,12 +1989,12 @@
   resolved "https://registry.yarnpkg.com/@pothos/core/-/core-3.22.5.tgz#afebfec0724b13aff25ec8db9575e65022b3b13a"
   integrity sha512-KkDyqjmGbcxJKk5n3qsO6ex6TANtRFmcAhSTPzcdF9lMU11mzZmhKksj0iIWecVnOVAkWQCqAjcKg1iMDpYfeg==
 
-"@pothos/plugin-prisma@^3.35.4":
-  version "3.35.4"
-  resolved "https://registry.yarnpkg.com/@pothos/plugin-prisma/-/plugin-prisma-3.35.4.tgz#b613658ef0ea99bb01cea31a9f399c95092534bb"
-  integrity sha512-1Pw69JISdDJAIKyWY5huHZk8oKvdpZoyOfq0UInuESFRloP7v4UNOfN+zCIqWAAPFQdMnEbcFl1bBNFwNtrvnA==
+"@pothos/plugin-prisma@^3.47.2":
+  version "3.47.2"
+  resolved "https://registry.yarnpkg.com/@pothos/plugin-prisma/-/plugin-prisma-3.47.2.tgz#436ac2c062d713c265a707f7f103446b02d80682"
+  integrity sha512-S38uYCETz1310HK9iKg8V87qkUqPW8pfDGDqbbhURBt5nqFHu8iCTzjY28DPWa8E68rME3KZEtXBzc1mwZH4eg==
   dependencies:
-    "@prisma/generator-helper" "^4.4.0"
+    "@prisma/generator-helper" "^4.11.0"
 
 "@prisma/client@^4.5.0":
   version "4.5.0"
@@ -2003,10 +2003,10 @@
   dependencies:
     "@prisma/engines-version" "4.5.0-43.0362da9eebca54d94c8ef5edd3b2e90af99ba452"
 
-"@prisma/debug@4.4.0":
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/@prisma/debug/-/debug-4.4.0.tgz#f4e3a25fc391894d5012ae882d13bd1d7552ab3a"
-  integrity sha512-tpJqrvmA8VlQuaVAmkFzIU7Of6xk3kQ2DYV6bPJukDZ6xmnufT27EpU8TSIra4jGdzz7y/R0rxmuXSBp24ew5w==
+"@prisma/debug@4.13.0":
+  version "4.13.0"
+  resolved "https://registry.yarnpkg.com/@prisma/debug/-/debug-4.13.0.tgz#22ea918572164764e74d8f25371b5a20b2590ec1"
+  integrity sha512-JrltTewF/paRb5mcM5OvcEi9DtdX0sINOAswruxKQrwOLA7Phqb52OfY38MIzGrsrJ8iUGVqQ5bpYZYpxOGCsQ==
   dependencies:
     "@types/debug" "4.1.7"
     debug "4.3.4"
@@ -2022,12 +2022,12 @@
   resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-4.5.0.tgz#82df347a893a5ae2a67707d44772ba181f4b9328"
   integrity sha512-4t9ir2SbQQr/wMCNU4YpHWp5hU14J2m3wHUZnGJPpmBF8YtkisxyVyQsKd1e6FyLTaGq8LOLhm6VLYHKqKNm+g==
 
-"@prisma/generator-helper@^4.4.0":
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/@prisma/generator-helper/-/generator-helper-4.4.0.tgz#4f273ff6a097e0b01689f1d5dc8d9cd8a35e9b5b"
-  integrity sha512-6z5Tl+Cjk/WDWUMvpCOzhsK4Nkcb64zGoU/NePl3Z0tFR2RkfnBfnmJbpWdHr9HQYz7jO7LsTAyS5aWPjqeHKg==
+"@prisma/generator-helper@^4.11.0":
+  version "4.13.0"
+  resolved "https://registry.yarnpkg.com/@prisma/generator-helper/-/generator-helper-4.13.0.tgz#4a665bba70681509003f0a8b34607835e80664c7"
+  integrity sha512-Zx9rtbsEIU/9DKnGRvmjLdyeyhzeeXNFp1alkRh1w//rQ5jTcobiay/jU4Qo+EQOs2bnWEfUeiBoOjfaysdLNg==
   dependencies:
-    "@prisma/debug" "4.4.0"
+    "@prisma/debug" "4.13.0"
     "@types/cross-spawn" "6.0.2"
     chalk "4.1.2"
     cross-spawn "7.0.3"
