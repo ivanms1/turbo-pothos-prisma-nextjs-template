@@ -1989,12 +1989,12 @@
   resolved "https://registry.yarnpkg.com/@pothos/core/-/core-3.22.5.tgz#afebfec0724b13aff25ec8db9575e65022b3b13a"
   integrity sha512-KkDyqjmGbcxJKk5n3qsO6ex6TANtRFmcAhSTPzcdF9lMU11mzZmhKksj0iIWecVnOVAkWQCqAjcKg1iMDpYfeg==
 
-"@pothos/plugin-prisma@^3.35.4":
-  version "3.35.4"
-  resolved "https://registry.yarnpkg.com/@pothos/plugin-prisma/-/plugin-prisma-3.35.4.tgz#b613658ef0ea99bb01cea31a9f399c95092534bb"
-  integrity sha512-1Pw69JISdDJAIKyWY5huHZk8oKvdpZoyOfq0UInuESFRloP7v4UNOfN+zCIqWAAPFQdMnEbcFl1bBNFwNtrvnA==
+"@pothos/plugin-prisma@^3.51.1":
+  version "3.51.1"
+  resolved "https://registry.yarnpkg.com/@pothos/plugin-prisma/-/plugin-prisma-3.51.1.tgz#27a2ba967ad325fcbfe7f8c68b8c6c03edd999c5"
+  integrity sha512-L1js/JQ8LgOQ3gCEDKxnSpEspPVLPAem0ypolP/Q+EXoBEg9byXIbA9Dtcei7ElIKqMpqVJEcS5k2a0tq4cE+Q==
   dependencies:
-    "@prisma/generator-helper" "^4.4.0"
+    "@prisma/generator-helper" "^4.11.0"
 
 "@prisma/client@^4.5.0":
   version "4.5.0"
@@ -2003,12 +2003,12 @@
   dependencies:
     "@prisma/engines-version" "4.5.0-43.0362da9eebca54d94c8ef5edd3b2e90af99ba452"
 
-"@prisma/debug@4.4.0":
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/@prisma/debug/-/debug-4.4.0.tgz#f4e3a25fc391894d5012ae882d13bd1d7552ab3a"
-  integrity sha512-tpJqrvmA8VlQuaVAmkFzIU7Of6xk3kQ2DYV6bPJukDZ6xmnufT27EpU8TSIra4jGdzz7y/R0rxmuXSBp24ew5w==
+"@prisma/debug@4.15.0":
+  version "4.15.0"
+  resolved "https://registry.yarnpkg.com/@prisma/debug/-/debug-4.15.0.tgz#a5165a3d45ce0bb2165f5821268f37d2ced5e938"
+  integrity sha512-dkbPz+gOVlWDBAaOEseSpAUz9NppT38UlwdryPyrwct6OClLirNC7wH+TpAQk5OZp9x59hNnfDz+T7XvL1v0/Q==
   dependencies:
-    "@types/debug" "4.1.7"
+    "@types/debug" "4.1.8"
     debug "4.3.4"
     strip-ansi "6.0.1"
 
@@ -2022,15 +2022,15 @@
   resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-4.5.0.tgz#82df347a893a5ae2a67707d44772ba181f4b9328"
   integrity sha512-4t9ir2SbQQr/wMCNU4YpHWp5hU14J2m3wHUZnGJPpmBF8YtkisxyVyQsKd1e6FyLTaGq8LOLhm6VLYHKqKNm+g==
 
-"@prisma/generator-helper@^4.4.0":
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/@prisma/generator-helper/-/generator-helper-4.4.0.tgz#4f273ff6a097e0b01689f1d5dc8d9cd8a35e9b5b"
-  integrity sha512-6z5Tl+Cjk/WDWUMvpCOzhsK4Nkcb64zGoU/NePl3Z0tFR2RkfnBfnmJbpWdHr9HQYz7jO7LsTAyS5aWPjqeHKg==
+"@prisma/generator-helper@^4.11.0":
+  version "4.15.0"
+  resolved "https://registry.yarnpkg.com/@prisma/generator-helper/-/generator-helper-4.15.0.tgz#f23d5266021140859a13f8f5e96d6a9185353b94"
+  integrity sha512-JVHNgXr0LrcqXqmFrs+BzxfyRL6cFD5GLTMVWfCLU7kqSJdWuZxfoZW995tg6mOXnBgPTf6Ocv3RY4RLQq8k4g==
   dependencies:
-    "@prisma/debug" "4.4.0"
+    "@prisma/debug" "4.15.0"
     "@types/cross-spawn" "6.0.2"
-    chalk "4.1.2"
     cross-spawn "7.0.3"
+    kleur "4.1.5"
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
@@ -2211,10 +2211,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/debug@4.1.7":
-  version "4.1.7"
-  resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.7.tgz#7cc0ea761509124709b8b2d1090d8f6c17aadb82"
-  integrity sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==
+"@types/debug@4.1.8":
+  version "4.1.8"
+  resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.8.tgz#cef723a5d0a90990313faec2d1e22aee5eecb317"
+  integrity sha512-/vPO1EPOs306Cvhwv7KfVfYvOJqA/S/AXjaHQiJboCZzcNDb+TIJFN9/2C9DZ//ijSKWioNyUxD792QmDJ+HKQ==
   dependencies:
     "@types/ms" "*"
 
@@ -3161,14 +3161,6 @@ capital-case@^1.0.4:
     tslib "^2.0.3"
     upper-case-first "^2.0.2"
 
-chalk@4.1.2, chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.1:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
-  integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
-  dependencies:
-    ansi-styles "^4.1.0"
-    supports-color "^7.1.0"
-
 chalk@^2.0.0:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
@@ -3177,6 +3169,14 @@ chalk@^2.0.0:
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
+
+chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.1:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
+  integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
+  dependencies:
+    ansi-styles "^4.1.0"
+    supports-color "^7.1.0"
 
 change-case-all@1.0.14:
   version "1.0.14"
@@ -5790,6 +5790,11 @@ jws@^3.2.2:
   dependencies:
     jwa "^1.4.1"
     safe-buffer "^5.0.1"
+
+kleur@4.1.5:
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.5.tgz#95106101795f7050c6c650f350c683febddb1780"
+  integrity sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==
 
 kleur@^3.0.3:
   version "3.0.3"
