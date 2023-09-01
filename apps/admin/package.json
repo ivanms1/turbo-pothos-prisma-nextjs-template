@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.6.8",
+    "@apollo/client": "^3.8.1",
     "apollo-hooks": "*",
     "lodash-es": "^4.17.21",
     "next": "12.3.1",
