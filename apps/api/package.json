@@ -19,7 +19,7 @@
     "@faker-js/faker": "^7.6.0",
     "@graphql-codegen/cli": "^3.2.1",
     "@graphql-codegen/schema-ast": "^2.5.1",
-    "@graphql-codegen/typescript": "^2.7.4",
+    "@graphql-codegen/typescript": "^4.0.1",
     "@graphql-codegen/typescript-operations": "^2.5.4",
     "@graphql-codegen/typescript-react-apollo": "^3.3.4",
     "@types/body-parser": "^1.19.0",
