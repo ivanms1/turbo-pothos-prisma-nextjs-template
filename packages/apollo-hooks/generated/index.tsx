@@ -28,7 +28,6 @@ export type Article = {
   isPublished: Scalars['Boolean'];
   lead: Scalars['String'];
   preview: Scalars['String'];
-  tags: Array<Scalars['String']>;
   title: Scalars['String'];
   updatedAt: Scalars['Date'];
 };
@@ -54,7 +53,6 @@ export type CreateArticleInput = {
   content: Scalars['String'];
   lead: Scalars['String'];
   preview: Scalars['String'];
-  tags: Array<Scalars['String']>;
   title: Scalars['String'];
 };
 
@@ -64,7 +62,6 @@ export type Mutation = {
   deleteArticle: Article;
   signUp: User;
   updateArticle: Article;
-  uploadImage: Scalars['String'];
 };
 
 
@@ -89,11 +86,6 @@ export type MutationSignUpArgs = {
 export type MutationUpdateArticleArgs = {
   articleId: Scalars['String'];
   input: CreateArticleInput;
-};
-
-
-export type MutationUploadImageArgs = {
-  path: Scalars['String'];
 };
 
 export type Query = {
