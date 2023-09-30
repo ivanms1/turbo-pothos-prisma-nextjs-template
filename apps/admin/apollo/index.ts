@@ -3,7 +3,6 @@ import isEqual from 'lodash/isEqual';
 import {
   ApolloClient,
   createHttpLink,
-  FieldPolicy,
   InMemoryCache,
   NormalizedCacheObject,
 } from '@apollo/client';
@@ -12,29 +11,6 @@ export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__';
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null;
 
-const projectsMergeConfig: FieldPolicy<any, any, any> = {
-  keyArgs: false,
-  merge(existing = null, incoming) {
-    if (!existing || !existing?.results?.length) {
-      return incoming;
-    }
-
-    if (!incoming.prevCursor) {
-      return existing;
-    }
-
-    if (existing.nextCursor === incoming.nextCursor) {
-      return existing;
-    }
-
-    const existingResults = existing?.results ?? [];
-    return {
-      ...incoming,
-      results: [...existingResults, ...incoming.results],
-    };
-  },
-};
-
 function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
@@ -42,17 +18,7 @@ function createApolloClient() {
     link: createHttpLink({
       uri: process.env.NEXT_PUBLIC_SERVER_URL,
     }),
-    cache: new InMemoryCache({
-      typePolicies: {
-        Query: {
-          fields: {
-            getApprovedProjects: projectsMergeConfig,
-            getMyProjects: projectsMergeConfig,
-            adminGetNotApprovedProjects: projectsMergeConfig,
-          },
-        },
-      },
-    }),
+    cache: new InMemoryCache(),
   });
 }
 

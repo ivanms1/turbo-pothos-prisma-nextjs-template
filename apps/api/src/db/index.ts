@@ -1,3 +1,8 @@
+/**
+ * This is a singleton class that contains a prisma client.
+ * This class is used for connecting to the database.
+ */
+
 import { PrismaClient } from '@prisma/client';
 
 class DBClient {

@@ -12,7 +12,7 @@ import { Context } from './context';
 const PORT = Number(process.env.PORT) || 8080;
 
 // Add production app url here
-const allowedOrigins = ['http://localhost:3000'];
+const ALLOWED_ORIGINS = ['http://localhost:3000'];
 
 const app = express();
 const httpServer = http.createServer(app);
@@ -25,7 +25,7 @@ server.start().then(async () => {
   app.use(
     '/graphql',
     cors<cors.CorsRequest>({
-      origin: allowedOrigins,
+      origin: ALLOWED_ORIGINS,
     }),
     json(),
     expressMiddleware(server, {
