@@ -2038,12 +2038,12 @@
   resolved "https://registry.yarnpkg.com/@pothos/core/-/core-3.22.5.tgz#afebfec0724b13aff25ec8db9575e65022b3b13a"
   integrity sha512-KkDyqjmGbcxJKk5n3qsO6ex6TANtRFmcAhSTPzcdF9lMU11mzZmhKksj0iIWecVnOVAkWQCqAjcKg1iMDpYfeg==
 
-"@pothos/plugin-prisma@^3.53.0":
-  version "3.53.0"
-  resolved "https://registry.yarnpkg.com/@pothos/plugin-prisma/-/plugin-prisma-3.53.0.tgz#4547fc649e1fe5af35ac5c1b418945fed53432d0"
-  integrity sha512-ANUcQ4l5EFNK70D0YbYi8wadCi3ktX+z07xBf5RDhfm295Sshm4+gxOlJ9LRXobbT2XoWusoWAAbxK2g0J5xIQ==
+"@pothos/plugin-prisma@^3.61.0":
+  version "3.61.0"
+  resolved "https://registry.yarnpkg.com/@pothos/plugin-prisma/-/plugin-prisma-3.61.0.tgz#43796b8449a31b34215a64eada0493a3f54b5f8f"
+  integrity sha512-Wc70KaJe7Ni91yguAPT85JyXuvCuQw+uOn8CZrAFtIZeIzbxTZpLRBLupNan3gKNo3r53ceBcEXnqt4d/A8t+A==
   dependencies:
-    "@prisma/generator-helper" "^5.0.0"
+    "@prisma/generator-helper" "^5.4.1"
 
 "@prisma/client@^5.2.0":
   version "5.2.0"
@@ -2052,12 +2052,12 @@
   dependencies:
     "@prisma/engines-version" "5.2.0-25.2804dc98259d2ea960602aca6b8e7fdc03c1758f"
 
-"@prisma/debug@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@prisma/debug/-/debug-5.0.0.tgz#cad4e5dd99a214991920f56394dca2f16cbee35b"
-  integrity sha512-3q/M/KqlQ01/HJXifU/zCNOHkoTWu24kGelMF/IBrRxm7njPqTTbwfnT1dh4JK+nuWM5/Dg1Lv00u2c0l7AHxg==
+"@prisma/debug@5.5.2":
+  version "5.5.2"
+  resolved "https://registry.yarnpkg.com/@prisma/debug/-/debug-5.5.2.tgz#25fc82ac13dff7491f136fad45a49e114effb148"
+  integrity sha512-OeyuNABo1dgWHIQuJAdvW5qp5ccFfbI0CKNvdg8D34YWOfo6L+4J0gmnRI/j+h40HvM3S5WH2T8e3W9bPa7EVg==
   dependencies:
-    "@types/debug" "4.1.8"
+    "@types/debug" "4.1.9"
     debug "4.3.4"
     strip-ansi "6.0.1"
 
@@ -2071,13 +2071,13 @@
   resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-5.2.0.tgz#e5dff48eb324c8137393933292d44ea5c3bc2ce7"
   integrity sha512-dT7FOLUCdZmq+AunLqB1Iz+ZH/IIS1Fz2THmKZQ6aFONrQD/BQ5ecJ7g2wGS2OgyUFf4OaLam6/bxmgdOBDqig==
 
-"@prisma/generator-helper@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@prisma/generator-helper/-/generator-helper-5.0.0.tgz#fff162da431b032a5448f167450fb1e12f15dfca"
-  integrity sha512-pufQ1mhoH6WzKNtzL79HZDoW4Ql3Lf8QEKVmBoW8e3Tdb50bxpYBYue5LBqp9vNW1xd1pgZO53cNiRfLX2d4Zg==
+"@prisma/generator-helper@^5.4.1":
+  version "5.5.2"
+  resolved "https://registry.yarnpkg.com/@prisma/generator-helper/-/generator-helper-5.5.2.tgz#259089b857bf4a32075e0e4bf76b35add6b81021"
+  integrity sha512-qQz4JfhjjMs+C/dbZUoGAU+JV685Qe72iGonDM0c9H05A5s5MCWj5wV2kVi1/DNiy7jkfqGGM7bX8k0/8yO0FQ==
   dependencies:
-    "@prisma/debug" "5.0.0"
-    "@types/cross-spawn" "6.0.2"
+    "@prisma/debug" "5.5.2"
+    "@types/cross-spawn" "6.0.3"
     cross-spawn "7.0.3"
     kleur "4.1.5"
 
@@ -2253,17 +2253,17 @@
   resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.12.tgz#6b2c510a7ad7039e98e7b8d3d6598f4359e5c080"
   integrity sha512-vt+kDhq/M2ayberEtJcIN/hxXy1Pk+59g2FV/ZQceeaTyCtCucjL2Q7FXlFjtWn4n15KCr1NE2lNNFhp0lEThw==
 
-"@types/cross-spawn@6.0.2":
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@types/cross-spawn/-/cross-spawn-6.0.2.tgz#168309de311cd30a2b8ae720de6475c2fbf33ac7"
-  integrity sha512-KuwNhp3eza+Rhu8IFI5HUXRP0LIhqH5cAjubUvGXXthh4YYBuP2ntwEX+Cz8GJoZUHlKo247wPWOfA9LYEq4cw==
+"@types/cross-spawn@6.0.3":
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/@types/cross-spawn/-/cross-spawn-6.0.3.tgz#c743cb2608f55860ee9776d8c99135d6032c763c"
+  integrity sha512-BDAkU7WHHRHnvBf5z89lcvACsvkz/n7Tv+HyD/uW76O29HoH1Tk/W6iQrepaZVbisvlEek4ygwT8IW7ow9XLAA==
   dependencies:
     "@types/node" "*"
 
-"@types/debug@4.1.8":
-  version "4.1.8"
-  resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.8.tgz#cef723a5d0a90990313faec2d1e22aee5eecb317"
-  integrity sha512-/vPO1EPOs306Cvhwv7KfVfYvOJqA/S/AXjaHQiJboCZzcNDb+TIJFN9/2C9DZ//ijSKWioNyUxD792QmDJ+HKQ==
+"@types/debug@4.1.9":
+  version "4.1.9"
+  resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.9.tgz#906996938bc672aaf2fb8c0d3733ae1dda05b005"
+  integrity sha512-8Hz50m2eoS56ldRlepxSBa6PWEVCtzUo/92HgLc2qTMnotJNIm7xP+UZhyWoYsyOdd5dxZ+NZLb24rsKyFs2ow==
   dependencies:
     "@types/ms" "*"
 
