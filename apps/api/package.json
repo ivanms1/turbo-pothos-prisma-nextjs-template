@@ -53,7 +53,7 @@
     "graphql-scalars": "^1.20.1",
     "jsonwebtoken": "^9.0.2",
     "logger": "*",
-    "prisma": "^5.2.0"
+    "prisma": "^5.9.0"
   },
   "prisma": {
     "schema": "src/prisma/schema.prisma",
