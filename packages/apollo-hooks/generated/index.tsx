@@ -47,8 +47,8 @@ export type ArticlesResponse = {
   __typename?: 'ArticlesResponse';
   nextCursor?: Maybe<Scalars['String']>;
   prevCursor?: Maybe<Scalars['String']>;
-  results?: Maybe<Array<Article>>;
-  totalCount?: Maybe<Scalars['Int']>;
+  results: Array<Article>;
+  totalCount: Scalars['Int'];
 };
 
 export type CreateArticleInput = {
@@ -139,7 +139,7 @@ export type SearchArticlesQueryVariables = Exact<{
 }>;
 
 
-export type SearchArticlesQuery = { __typename?: 'Query', articles?: { __typename?: 'ArticlesResponse', results?: Array<{ __typename?: 'Article', id?: string | null, title?: string | null }> | null } | null };
+export type SearchArticlesQuery = { __typename?: 'Query', articles?: { __typename?: 'ArticlesResponse', results: Array<{ __typename?: 'Article', id?: string | null, title?: string | null }> } | null };
 
 
 export const SearchArticlesDocument = gql`

@@ -4,8 +4,6 @@ import { Button } from 'ui';
 function Home() {
   const { data } = useSearchArticlesQuery();
 
-  console.log('data', data);
-
   return (
     <div>
       <h1>Web</h1>

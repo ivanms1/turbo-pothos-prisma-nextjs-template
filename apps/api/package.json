@@ -35,7 +35,7 @@
     "scripts": "*",
     "ts-node-dev": "^2.0.0",
     "tsconfig": "*",
-    "typescript": "^4.8.4"
+    "typescript": "^5.8.2"
   },
   "jest": {
     "preset": "scripts/jest/node"

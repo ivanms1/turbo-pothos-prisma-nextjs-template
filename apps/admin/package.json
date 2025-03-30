@@ -23,6 +23,6 @@
     "@types/react": "^19.0.12",
     "eslint": "8.33.0",
     "tsconfig": "*",
-    "typescript": "^4.8.4"
+    "typescript": "^5.8.2"
   }
 }

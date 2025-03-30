@@ -23,8 +23,12 @@ const ArticlesResponse = builder.objectType('ArticlesResponse', {
   fields: (t) => ({
     nextCursor: t.exposeString('nextCursor', { nullable: true }),
     prevCursor: t.exposeString('prevCursor', { nullable: true }),
-    totalCount: t.exposeInt('totalCount', { nullable: true }),
-    results: t.field({ type: [Article], resolve: (parent) => parent.results }),
+    totalCount: t.exposeInt('totalCount', { nullable: false }),
+    results: t.field({
+      type: [Article],
+      resolve: (parent) => parent.results,
+      nullable: false,
+    }),
   }),
 });
 

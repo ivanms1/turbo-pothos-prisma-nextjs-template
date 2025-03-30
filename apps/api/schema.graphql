@@ -22,8 +22,8 @@ input ArticlesInput {
 type ArticlesResponse {
   nextCursor: String
   prevCursor: String
-  results: [Article!]
-  totalCount: Int
+  results: [Article!]!
+  totalCount: Int!
 }
 
 input CreateArticleInput {
