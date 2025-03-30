@@ -1,13 +1,13 @@
 type Article {
-  author: User!
-  content: String!
-  createdAt: Date!
-  id: ID!
-  isPublished: Boolean!
-  lead: String!
-  preview: String!
-  title: String!
-  updatedAt: Date!
+  author: User
+  content: String
+  createdAt: Date
+  id: ID
+  isPublished: Boolean
+  lead: String
+  preview: String
+  title: String
+  updatedAt: Date
 }
 
 """Articles query input"""
@@ -22,7 +22,7 @@ input ArticlesInput {
 type ArticlesResponse {
   nextCursor: String
   prevCursor: String
-  results: [Article!]!
+  results: [Article!]
   totalCount: Int
 }
 
@@ -44,24 +44,18 @@ The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](
 scalar JSON
 
 type Mutation {
-  createArticle(input: CreateArticleInput!, userId: String!): Article!
-  deleteArticle(articleId: String!): Article!
-  signUp(avatar: String!, email: String!, name: String!): User!
-  updateArticle(articleId: String!, input: CreateArticleInput!): Article!
+  createArticle(input: CreateArticleInput!, userId: String!): Article
+  deleteArticle(articleId: String!): Article
+  signUp(avatar: String!, email: String!, name: String!): User
+  updateArticle(articleId: String!, input: CreateArticleInput!): Article
 }
 
 type Query {
-  getArticle(articleId: String!): Article!
-  getUser(userId: String!): User!
-  getUserArticles(input: ArticlesInput!, userId: String!): ArticlesResponse!
-  getUsers: [User!]!
-  searchArticles(input: ArticlesInput): ArticlesResponse!
-}
-
-"""User role"""
-enum Role {
-  ADMIN
-  AUTHOR
+  getArticle(articleId: String!): Article
+  getUser(userId: String!): User
+  getUserArticles(input: ArticlesInput!, userId: String!): ArticlesResponse
+  getUsers: [User!]
+  searchArticles(input: ArticlesInput): ArticlesResponse
 }
 
 """Search order"""
@@ -72,8 +66,7 @@ enum SearchOrder {
 
 type User {
   avatar: String
-  email: String!
-  id: ID!
-  name: String!
-  role: Role!
+  email: String
+  id: ID
+  name: String
 }

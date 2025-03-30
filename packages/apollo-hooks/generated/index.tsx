@@ -5,6 +5,8 @@ export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
+export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 const defaultOptions = {} as const;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -21,15 +23,15 @@ export type Scalars = {
 
 export type Article = {
   __typename?: 'Article';
-  author: User;
-  content: Scalars['String'];
-  createdAt: Scalars['Date'];
-  id: Scalars['ID'];
-  isPublished: Scalars['Boolean'];
-  lead: Scalars['String'];
-  preview: Scalars['String'];
-  title: Scalars['String'];
-  updatedAt: Scalars['Date'];
+  author?: Maybe<User>;
+  content?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  id?: Maybe<Scalars['ID']>;
+  isPublished?: Maybe<Scalars['Boolean']>;
+  lead?: Maybe<Scalars['String']>;
+  preview?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  updatedAt?: Maybe<Scalars['Date']>;
 };
 
 /** Articles query input */
@@ -45,7 +47,7 @@ export type ArticlesResponse = {
   __typename?: 'ArticlesResponse';
   nextCursor?: Maybe<Scalars['String']>;
   prevCursor?: Maybe<Scalars['String']>;
-  results: Array<Article>;
+  results?: Maybe<Array<Article>>;
   totalCount?: Maybe<Scalars['Int']>;
 };
 
@@ -58,10 +60,10 @@ export type CreateArticleInput = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  createArticle: Article;
-  deleteArticle: Article;
-  signUp: User;
-  updateArticle: Article;
+  createArticle?: Maybe<Article>;
+  deleteArticle?: Maybe<Article>;
+  signUp?: Maybe<User>;
+  updateArticle?: Maybe<Article>;
 };
 
 
@@ -90,11 +92,11 @@ export type MutationUpdateArticleArgs = {
 
 export type Query = {
   __typename?: 'Query';
-  getArticle: Article;
-  getUser: User;
-  getUserArticles: ArticlesResponse;
-  getUsers: Array<User>;
-  searchArticles: ArticlesResponse;
+  getArticle?: Maybe<Article>;
+  getUser?: Maybe<User>;
+  getUserArticles?: Maybe<ArticlesResponse>;
+  getUsers?: Maybe<Array<User>>;
+  searchArticles?: Maybe<ArticlesResponse>;
 };
 
 
@@ -118,12 +120,6 @@ export type QuerySearchArticlesArgs = {
   input?: InputMaybe<ArticlesInput>;
 };
 
-/** User role */
-export enum Role {
-  Admin = 'ADMIN',
-  Author = 'AUTHOR'
-}
-
 /** Search order */
 export enum SearchOrder {
   Asc = 'asc',
@@ -133,10 +129,9 @@ export enum SearchOrder {
 export type User = {
   __typename?: 'User';
   avatar?: Maybe<Scalars['String']>;
-  email: Scalars['String'];
-  id: Scalars['ID'];
-  name: Scalars['String'];
-  role: Role;
+  email?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['ID']>;
+  name?: Maybe<Scalars['String']>;
 };
 
 export type SearchArticlesQueryVariables = Exact<{
@@ -144,7 +139,7 @@ export type SearchArticlesQueryVariables = Exact<{
 }>;
 
 
-export type SearchArticlesQuery = { __typename?: 'Query', articles: { __typename?: 'ArticlesResponse', results: Array<{ __typename?: 'Article', id: string, title: string }> } };
+export type SearchArticlesQuery = { __typename?: 'Query', articles?: { __typename?: 'ArticlesResponse', results?: Array<{ __typename?: 'Article', id?: string | null, title?: string | null }> | null } | null };
 
 
 export const SearchArticlesDocument = gql`
@@ -182,6 +177,11 @@ export function useSearchArticlesLazyQuery(baseOptions?: Apollo.LazyQueryHookOpt
           const options = {...defaultOptions, ...baseOptions}
           return Apollo.useLazyQuery<SearchArticlesQuery, SearchArticlesQueryVariables>(SearchArticlesDocument, options);
         }
+export function useSearchArticlesSuspenseQuery(baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<SearchArticlesQuery, SearchArticlesQueryVariables>) {
+          const options = baseOptions === Apollo.skipToken ? baseOptions : {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<SearchArticlesQuery, SearchArticlesQueryVariables>(SearchArticlesDocument, options);
+        }
 export type SearchArticlesQueryHookResult = ReturnType<typeof useSearchArticlesQuery>;
 export type SearchArticlesLazyQueryHookResult = ReturnType<typeof useSearchArticlesLazyQuery>;
+export type SearchArticlesSuspenseQueryHookResult = ReturnType<typeof useSearchArticlesSuspenseQuery>;
 export type SearchArticlesQueryResult = Apollo.QueryResult<SearchArticlesQuery, SearchArticlesQueryVariables>;
