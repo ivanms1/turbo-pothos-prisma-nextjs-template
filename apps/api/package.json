@@ -15,7 +15,7 @@
     "db:push": "yarn prisma db push"
   },
   "devDependencies": {
-    "@boost/module": "^4.0.0",
+    "@boost/module": "^5.0.0",
     "@faker-js/faker": "^8.2.0",
     "@graphql-codegen/cli": "^3.2.1",
     "@graphql-codegen/schema-ast": "^2.5.1",
