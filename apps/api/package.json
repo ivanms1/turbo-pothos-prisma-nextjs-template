@@ -17,7 +17,7 @@
   "devDependencies": {
     "@boost/module": "^5.0.0",
     "@faker-js/faker": "^8.2.0",
-    "@graphql-codegen/cli": "^3.2.1",
+    "@graphql-codegen/cli": "^5.0.5",
     "@graphql-codegen/schema-ast": "^2.5.1",
     "@graphql-codegen/typescript": "^4.0.1",
     "@graphql-codegen/typescript-operations": "^2.5.4",
