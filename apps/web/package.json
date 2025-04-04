@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.191",
-    "@types/node": "^22.13.14",
+    "@types/node": "^22.14.0",
     "@types/react": "^19.0.12",
     "eslint": "8.33.0",
     "tsconfig": "*",
