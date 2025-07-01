@@ -44,7 +44,7 @@
     "@apollo/server": "^4.10.4",
     "@pothos/core": "^4.5.1",
     "@pothos/plugin-prisma": "^4.5.0",
-    "@prisma/client": "^6.5.0",
+    "@prisma/client": "^6.10.1",
     "body-parser": "^1.19.2",
     "cloudinary": "^1.37.0",
     "cors": "^2.8.5",
